@@ -7,14 +7,21 @@
 
 #include "Definicion.h"
 #include "CElementos.h"
+#include "CCaja.h"
+#include "CPunto.h"
+#include "CLinea.h"
 
 class CTablero {
 private:
     int tipoTablero;
+    int tableroInterno;
+    vector<vector<CElementos*>> tablero;
 public:
     CTablero(){}
-    CTablero(int _tipo):tipoTablero(_tipo){}
-    virtual ~CTablero(){}
+    CTablero(int _tipo);
+    virtual ~CTablero();
+    void crearTablero();
+    void mostrar();
     void revisarTablero();
 };
 

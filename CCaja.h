@@ -10,9 +10,12 @@
 
 class CCaja: public CElementos {
 private:
+    bool dibujar = false;
+    char dueno = ' ';
 public:
     CCaja(){}
     virtual ~CCaja(){}
+    char getSimbolo() override{if(dibujar == true){dueno = 'A';} return dueno;}
 };
 
 

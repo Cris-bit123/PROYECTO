@@ -13,6 +13,7 @@ private:
 public:
     CPunto(){}
     virtual ~CPunto(){}
+    char getSimbolo() override{return '+';};
 };
 
 

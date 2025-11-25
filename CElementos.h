@@ -7,6 +7,7 @@
 
 #include "Definicion.h"
 
+
 #include <vector>
 
 class CElementos {
@@ -14,6 +15,7 @@ protected:
     vector<CElementos*> tablero;
 public:
     virtual ~CElementos(){}
+    virtual char getSimbolo() = 0;
 };
 
 

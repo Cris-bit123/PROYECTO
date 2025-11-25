@@ -11,9 +11,11 @@
 
 class CLinea: public CElementos {
 private:
+    bool dibujar = false;
 public:
     CLinea(){}
     virtual ~CLinea(){}
+    char getSimbolo() override{if (dibujar == false){return ' ';}else{return '-';}}
 };
 
 
