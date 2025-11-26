@@ -16,6 +16,7 @@ public:
     CLinea(){}
     virtual ~CLinea(){}
     char getSimbolo() override{if (dibujar == false){return '|';}else{return '-';}}
+    void visibilidad() override{dibujar=true;}
 };
 
 
