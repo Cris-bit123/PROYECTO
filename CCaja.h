@@ -15,8 +15,10 @@ private:
 public:
     CCaja(){}
     virtual ~CCaja(){}
-    char getSimbolo() override{if(dibujar == true){dueno = 'A';} return dueno;}
+    char getSimbolo() override{return dueno;}
+    bool completo(int f, int c, char _letra, vector<vector<CElementos*>> &m) override;
     void visibilidad() override{dibujar=true;}
+    void setSimbolo(char _simbolo) override{dueno = _simbolo;}
 };
 
 

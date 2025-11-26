@@ -16,6 +16,7 @@ private:
     int tipoTablero;
     int tableroInterno;
     vector<vector<CElementos*>> tablero;
+    char jugador = 'A';
 public:
     CTablero(){}
     CTablero(int _tipo);

@@ -17,6 +17,8 @@ public:
     virtual ~CElementos(){}
     virtual char getSimbolo() = 0;
     virtual void visibilidad() = 0;
+    virtual bool completo(int f, int c, char _letra, vector<vector<CElementos*>> &m){return false;}
+    virtual void setSimbolo(char _simbolo){}
 };
 
 

@@ -75,9 +75,19 @@ void CTablero::mostrar() {
 }
 
 void CTablero::revisarTablero() {
-    for (int i = 0; i < tableroInterno; i++) {
-        for (int j = 0; j < tableroInterno; j++) {
-
+    for (int i = 1; i < tableroInterno; i+=2) {
+        for (int j = 1; j < tableroInterno; j+= 2) {
+            if (tablero[i][j]->getSimbolo() == ' '){
+                if (tablero[i][j]->completo(i, j, jugador, tablero)){
+                    tablero[i][j]->setSimbolo(jugador);
+                }else {
+                    if (jugador == 'A') {
+                        jugador = 'B';
+                    }else{
+                        jugador = 'A';
+                    }
+                }
+            }
         }
     }
 }
@@ -98,6 +108,7 @@ bool CTablero::movimiento(int x1,int y1,int x2,int y2) {
         }else{
             if (tablero[x_coord][y_coord]->getSimbolo() == ' ') {
                 tablero[x_coord][y_coord]->visibilidad();
+                revisarTablero();
                 return true;
             }
         }
@@ -106,6 +117,5 @@ bool CTablero::movimiento(int x1,int y1,int x2,int y2) {
         cout<<"XXXXXXXX----Fuera del rango----XXXXXXXX"<<endl;
         return false;
     }
-    revisarTablero();
     return false;
 }
