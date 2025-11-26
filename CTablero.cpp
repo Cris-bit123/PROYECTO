@@ -9,8 +9,7 @@ CTablero::CTablero(int _tipo) {
     tipoTablero = _tipo;
     tableroInterno = 2*_tipo-1;
     crearTablero();
-}
-
+} //jdjakkasjdjkaka
 void CTablero::crearTablero() {
     for (int i = 0; i < tableroInterno; i++) {
         vector<CElementos*> fila;
