@@ -9,7 +9,7 @@ CTablero::CTablero(int _tipo) {
     tipoTablero = _tipo;
     tableroInterno = 2*_tipo-1;
     crearTablero();
-} //jdjakkasjdjkaka
+} 
 void CTablero::crearTablero() {
     for (int i = 0; i < tableroInterno; i++) {
         vector<CElementos*> fila;
@@ -18,11 +18,11 @@ void CTablero::crearTablero() {
                 if (j % 2 == 0) {
                     fila.push_back(new CPunto());
                 }else {
-                    fila.push_back(new CLinea());
+                    fila.push_back(new CLinea('h'));
                 }
             }else {
                 if (j % 2 == 0) {
-                    fila.push_back(new CLinea());
+                    fila.push_back(new CLinea('V'));
                 }else {
                     fila.push_back(new CCaja());
                 }
@@ -42,7 +42,30 @@ CTablero::~CTablero() {
 
 void CTablero::mostrar() {
     cout << "Tablero de " << tipoTablero << "x" << tipoTablero << " (Matriz interna " << tableroInterno << "x" << tableroInterno << "):\n\n";
+    cout << "    ";
+    for (int j = 1; j <= tipoTablero; j++) {
+        cout << j;
+        if (j < 10) {
+            cout << "     ";
+        }else {
+            cout << "  ";
+        }
+    }
+
+    cout << endl;
+    int filas = 1;
     for (int i = 0; i < tableroInterno; i++) {
+        if (i % 2 == 0 && filas <= tipoTablero) {
+            if (filas < 10) {
+                cout <<" " << filas  << " ";
+            }else {
+                cout << filas << " ";
+            }
+            filas++;
+        }else {
+            cout << "   ";
+        }
+
         for (int j = 0; j < tableroInterno; j++) {
             cout << " " << tablero[i][j]->getSimbolo() << " ";
         }
@@ -52,4 +75,37 @@ void CTablero::mostrar() {
 }
 
 void CTablero::revisarTablero() {
+    for (int i = 0; i < tableroInterno; i++) {
+        for (int j = 0; j < tableroInterno; j++) {
+
+        }
+    }
+}
+
+bool CTablero::movimiento(int x1,int y1,int x2,int y2) {
+    int x_coord = (x1*2+x2*2)/2-2;
+    int y_coord = (y1*2+y2*2)/2-2;
+    if (x1>=1 && x2>=1 && y1>=1 && y2>=1 && x1<=tipoTablero && x2<=tipoTablero && y1<=tipoTablero && y2<=tipoTablero) {
+        if (x1==x2 && y1==y2) {
+            cout<<"XXXXXXXX----Las coordenadas son las mismas----XXXXXXXX"<<endl;
+            return false;
+        }else if (abs(x1-x2) + abs(y1-y2)!=1) {
+            cout<<"XXXXXXXX----Las coordenadas no son adyacentes----XXXXXXXX"<<endl;
+            return false;
+        }else if (tablero[x_coord][y_coord]->getSimbolo() == '-' || tablero[x_coord][y_coord]->getSimbolo() == '|') {
+            cout<<"XXXXXXXX---Ya hay una linea----XXXXXXXX"<<endl;
+            return false;
+        }else{
+            if (tablero[x_coord][y_coord]->getSimbolo() == ' ') {
+                tablero[x_coord][y_coord]->visibilidad();
+                return true;
+            }
+        }
+    }
+    else {
+        cout<<"XXXXXXXX----Fuera del rango----XXXXXXXX"<<endl;
+        return false;
+    }
+    revisarTablero();
+    return false;
 }
