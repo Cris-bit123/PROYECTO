@@ -14,7 +14,7 @@ public:
     CPunto(){}
     virtual ~CPunto(){}
     char getSimbolo() override{return '+';};
-    void visibilidad() override{dibujar=true;}
+    void visibilidad() override{}
 };
 
 

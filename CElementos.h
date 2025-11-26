@@ -16,6 +16,7 @@ protected:
 public:
     virtual ~CElementos(){}
     virtual char getSimbolo() = 0;
+    virtual void visibilidad() = 0;
 };
 
 

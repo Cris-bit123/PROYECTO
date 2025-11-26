@@ -22,8 +22,9 @@ int main() {
     //tablero.movimiento(6,5,6,6);//horizontal
     //tablero.mostrar();
     tablero2.movimiento(10,9,10,10); //horizontal
-    //tablero2.mostrar();
-    tablero2.movimiento(10,9,10,10); //vertical
+    tablero2.movimiento(9,9,9,10);
+    tablero2.movimiento(9,10,10,10);
+    tablero2.movimiento(10,9,9,9); //vertical
     tablero2.mostrar();
 
 

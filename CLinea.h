@@ -12,10 +12,12 @@
 class CLinea: public CElementos {
 private:
     bool dibujar = false;
+    char linea;
 public:
     CLinea(){}
+    CLinea(char _linea){if (_linea == 'h'){linea = '-';}else{linea = '|';}}
     virtual ~CLinea(){}
-    char getSimbolo() override{if (dibujar == false){return '|';}else{return '-';}}
+    char getSimbolo() override{if (dibujar == false){return ' ';}else{return linea;}}
     void visibilidad() override{dibujar=true;}
 };
 
