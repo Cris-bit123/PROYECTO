@@ -11,7 +11,7 @@
 class CCaja: public CElementos {
 private:
     bool dibujar = false;
-    char dueno = 'X';
+    char dueno = ' ';
 public:
     CCaja(){}
     virtual ~CCaja(){}
