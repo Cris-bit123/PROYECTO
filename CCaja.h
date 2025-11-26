@@ -16,6 +16,7 @@ public:
     CCaja(){}
     virtual ~CCaja(){}
     char getSimbolo() override{if(dibujar == true){dueno = 'A';} return dueno;}
+    void visibilidad() override{dibujar=true;}
 };
 
 
