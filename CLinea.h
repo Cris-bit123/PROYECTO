@@ -15,7 +15,7 @@ private:
     char linea;
 public:
     CLinea(){}
-    CLinea(char _linea){if (_linea == 'h'){linea = '-';}else{linea = '|';}}
+    CLinea(char _linea){if (_linea == 'h'){linea = '-';}if (_linea == 'v'){linea = '|';}}
     virtual ~CLinea(){}
     char getSimbolo() override{if (dibujar == false){return ' ';}else{return linea;}}
     void visibilidad() override{dibujar=true;}

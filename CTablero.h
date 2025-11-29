@@ -16,15 +16,19 @@ private:
     int tipoTablero;
     int tableroInterno;
     vector<vector<CElementos*>> tablero;
-    char jugador = 'A';
+    char jugador;
+
 public:
     CTablero(){}
-    CTablero(int _tipo);
     virtual ~CTablero();
     void crearTablero();
     void mostrar();
-    void revisarTablero();
-    bool movimiento(int x1,int y1,int x2,int y2);
+    void IniciarJuego();
+    void partida();
+    void movimiento(int x1,int y1,int x2,int y2);
+    void limpiarTablero();
+    bool revisarTablero();
+    bool terminado();
 };
 
 
