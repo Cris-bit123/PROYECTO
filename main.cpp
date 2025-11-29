@@ -1,4 +1,11 @@
 #include "CTablero.h"
+/*
+Aranda Gallardo, Cristobal Javier - 202510370
+Cruz Toro, Carlos - 202510141
+Bolívar Vila, Jose Miguel - 202510270
+Diaz Hernández, Emiliano - 202510286
+Rivera Romaní, Braulio Matías - 202510488
+*/
 
 int main() {
     // CLinea linea;
