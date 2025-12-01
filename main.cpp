@@ -8,9 +8,6 @@ Rivera Romaní, Braulio Matías - 202510488
 */
 
 int main() {
-    // CLinea linea;
-    // CCaja caja;
-    // CPunto punto;
 
     CTablero tablero;
     tablero.IniciarJuego();
