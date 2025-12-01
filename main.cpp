@@ -1,6 +1,6 @@
 #include "CTablero.h"
 /*
-Aranda Gallardo, Cristobal Javier - 202510370
+Aranda Gallardo, Cristobal Javier - 202510374
 Cruz Toro, Carlos - 202510141
 Bolívar Vila, Jose Miguel - 202510270
 Diaz Hernández, Emiliano - 202510286
